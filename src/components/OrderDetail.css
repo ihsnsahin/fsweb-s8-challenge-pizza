@@ -1,0 +1,120 @@
+.order-detail-wrapper {
+   max-width: 532px;
+   margin: 0 auto;
+   width: 100%;
+   font-family: "Barlow";
+}
+h4{
+    font-size:1.2rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pizza-detail h3 {
+    font-size: 1.375rem;
+}
+#price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: "Barlow";
+}
+.pizza-detail > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+.pizza-size {
+    display: flex;
+    gap: 6rem;
+}
+.size label{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    cursor:pointer
+}
+.size, .kalınlık {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pizza-additional {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.checkbox {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;;
+}
+.checkbox label {
+    width: 25%;
+    display: flex;
+    gap: 0.5rem;
+}
+.name-input, .text-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.name-input label, .text-input label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.text-input input {
+    padding: 0.8rem;
+}
+.name-input input {
+    padding: 0.8rem;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    gap:0.5rem;
+    padding-bottom: 5rem
+}
+.counter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 28%;
+}
+.counter span{
+    padding-top: 0.5rem;
+}
+.summary-card{
+    display: flex;
+    flex-direction: column;
+    width: 60%;;
+    gap:0.5rem;
+}
+
+.order-footer button {
+    background-color: #FDC913;
+}
+.summarry-row, .summarry-total {
+    display: flex;
+    justify-content: space-around;
+}
+.summary-card h4{
+    padding-left: 3.2rem;
+}
+.summarry-total span {
+    color:#CE2829;
+    font-weight: 600;
+}
