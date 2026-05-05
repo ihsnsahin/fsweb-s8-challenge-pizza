@@ -22,7 +22,7 @@ function Form() {
       if(oldValues.includes(value)) {
         newValue=oldValues.filter((item)=> item!==value)
       } else {
-        newValue=[...oldValues,value]
+        newValue=[...oldValues, value]
       }
     } else {
       newValue = value
@@ -47,7 +47,8 @@ function Form() {
                     <input 
                       type="radio" 
                       name="size" 
-                      value="Küçük" 
+                      value="Küçük"
+                      checked={form.size==="Küçük"}
                       onChange={handleChange}
                     /> Küçük
                   </label>
@@ -56,6 +57,7 @@ function Form() {
                       type="radio" 
                       name="size" 
                       value="Orta"
+                     checked={form.size==="Orta"}
                       onChange={handleChange}
                     /> Orta
                   </label>
@@ -63,14 +65,15 @@ function Form() {
                     <input 
                       type="radio" 
                       name="size" 
-                      value="Büyük" 
+                      value="Büyük"
+                     checked={form.size==="Büyük"}
                       onChange={handleChange}
                     /> Büyük
                   </label>
             </div>
             <div className="thickness">
                   <h4>Hamur Seç</h4>
-                  <select name="thickness" onChange={handleChange}>
+                  <select name="thickness" value={form.thickness} onChange={handleChange}>
                       <option value="" disabled>Hamur Kalınlığı Seçiniz</option>
                       <option value="Kalın" >Kalın</option>
                       <option value="İnce" >İnce</option>
@@ -86,6 +89,7 @@ function Form() {
                 type="checkbox" 
                 name= "add"
                 value={item}
+                checked={form.add.includes(item)}
                 onChange={handleChange}
                 />{item}
                 </label> )}
@@ -97,6 +101,7 @@ function Form() {
                   id="name"
                   name="name"
                   onChange={handleChange}
+                  value={form.name}
                   placeholder="Ad Soyad Giriniz"></input>
         </div>
         <div className="product-input">
@@ -105,12 +110,14 @@ function Form() {
                   id="productName"
                   name="productName"
                   onChange={handleChange}
+                  value={form.productName}
                   placeholder="Ürün Adı Giriniz"></input>
         </div>
         <div className="text-input">
           <label htmlFor="orderNote">Sipariş Notu</label>
           <textarea id="orderNote" 
-                    name="orderNote" 
+                    name="orderNote"
+                    value={form.orderNote}
                     onChange={handleChange}
                     placeholder="Siparişine eklemek istediğin bir not var mı?" rows="2"></textarea>
         </div>
