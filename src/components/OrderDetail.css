@@ -120,7 +120,7 @@ form {
 .order-footer button {
     background-color: #FDC913;
 }
-.order-footer button:disabled {
+.order-footer button:disabled{
     background-color: #5F5F5F;
     color:white;
 }

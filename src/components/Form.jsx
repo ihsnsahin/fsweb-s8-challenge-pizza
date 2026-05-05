@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {add} from "./data";
 import axios from "axios";
+import { product } from "./data";
 
 
 const initialForm = {
@@ -10,9 +11,29 @@ const initialForm = {
   thickness: "",
   add: [],
   orderNote: "",
+  quantity: 1,
+  totalPrice: product.fiyat,
 }
 function Form() {
   const [form, setForm] = useState(initialForm);
+  const [isValid, setIsValid] = useState(false);
+  const [errors, setErrors] = useState({
+    name: false,
+    productName: false,
+    size: false,
+    thickness: false,
+    add: false,
+    orderNote: false,
+  })
+  
+  const addPrice = form.add.length*product.ek;
+  const totalPrice = form.quantity*product.fiyat + addPrice;
+
+  const handleQuantityChange = (amount) => {
+    if(form.quantity + amount >= 1) {
+      setForm({...form, quantity: form.quantity + amount})
+    }
+  }
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
@@ -28,16 +49,69 @@ function Form() {
       newValue = value
     }
      setForm({ ...form, [name]: newValue });
+
+    if (name === 'name') {
+      if (value.trim().length>=3) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    };
+     if (name === 'productName') {
+      if (newValue.trim().length>=3) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    };
+    if (name === 'size') {
+      if (newValue) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    };
+    if (name === 'thickness') {
+      if (newValue) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    };
+    if (name === 'add') {
+      if ( newValue.length>=4 && newValue.length<=10) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    };
+
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+    const finalForm = {...form, totalPrice:totalPrice};
+    setForm(finalForm);
+    if(!isValid) return;
     axios.post("https://reqres.in/api/pizza ", form, {
       headers: {"x-api-key": "pub_bb6e669884e959413fd1a4f9d6750f26f9a75699353266f035534be0c29b5f3b"}
     })
     .then((res)=>console.log("Sipariş Özeti", res.data))
     .catch((err)=>console.log(err))
-  }
+  };
+   useEffect(() => {
+    if (
+      form.name.trim().length>=3 && 
+      form.productName.trim().length>=3 &&
+      form.size && 
+      form.thickness &&
+      form.add.length>=4 && 
+      form.add.length<=10
+    ) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+   }, [form])
     return (
     <form onSubmit={handleSubmit}>
         <div className="pizza-size">
@@ -82,7 +156,7 @@ function Form() {
                       </div>
         <div className="pizza-additional">
           <h4>Ek Malzemeler</h4>
-          <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <p>En Fazla 10 malzeme seçebilirsiniz. {product.ek}₺</p>
           <div className="checkbox">
               {add.map((item)=> <label key={item}>
               <input 
@@ -123,21 +197,21 @@ function Form() {
         </div>
         <div className="order-footer">
             <div className="counter">
-              <button type="button">-</button>
-              <span>1</span>
-              <button type="button">+</button>
+              <button type="button" onClick={()=>handleQuantityChange(-1)} disabled={form.quantity <= 1}>-</button>
+              <span>{form.quantity}</span>
+              <button type="button" onClick={()=>handleQuantityChange(1)}>+</button>
             </div>
             <div className="summary-card">
                 <h4>Sipariş Toplamı</h4>
                 <div className="summarry-row">
                 <span>Seçimler</span>
-                <span>25.00₺</span>
+                <span>{addPrice.toFixed(2)}₺</span>
             </div>
             <div className="summarry-total">
                 <span>Toplam</span>
-                <span>110.50₺</span>
+                <span>{totalPrice.toFixed(2)}₺</span>
                 </div>
-                <button type="submit" >Sipariş Ver</button>
+                <button type="submit" disabled={!isValid}>Sipariş Ver</button>
             </div>
         </div>
     </form>)
