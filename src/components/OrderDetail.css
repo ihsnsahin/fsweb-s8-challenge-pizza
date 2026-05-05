@@ -3,6 +3,9 @@
    margin: 0 auto;
    width: 100%;
    font-family: "Barlow";
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
 }
 h4{
     font-size:1.2rem;
@@ -42,7 +45,7 @@ form {
     gap: 0.5rem;
     cursor:pointer
 }
-.size, .kalınlık {
+.size, .thickness {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -65,16 +68,23 @@ form {
     display: flex;
     gap: 0.5rem;
 }
-.name-input, .text-input {
+.product-input, .name-input, .text-input {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.name-input label, .text-input label {
+.product-input label, .name-input label, .text-input label {
     font-size: 1.2rem;
     font-weight: 700;
 }
-.text-input input {
+.text-input textarea {
+    padding: 0.8rem;
+}
+.text-input textarea::placeholder {
+    font-family: "Barlow";
+    font-size: 0.9rem;
+}   
+.product-input input {
     padding: 0.8rem;
 }
 .name-input input {
@@ -85,7 +95,9 @@ form {
     display: flex;
     justify-content: space-between;
     gap:0.5rem;
-    padding-bottom: 5rem
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+     border-top: 1px solid #5F5F5F80;
 }
 .counter {
     display: flex;
@@ -102,10 +114,15 @@ form {
     flex-direction: column;
     width: 60%;;
     gap:0.5rem;
+   
 }
 
 .order-footer button {
     background-color: #FDC913;
+}
+.order-footer button:disabled {
+    background-color: #5F5F5F;
+    color:white;
 }
 .summarry-row, .summarry-total {
     display: flex;
@@ -118,3 +135,4 @@ form {
     color:#CE2829;
     font-weight: 600;
 }
+
