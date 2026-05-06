@@ -5,7 +5,7 @@ import OrderDetail from './OrderDetail';
 function Order() {
    
     return (
-    <div className='container'>
+    <div className="container">
     <header>
         <div className='content'>
         <h2>

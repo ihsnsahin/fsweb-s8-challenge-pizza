@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {add} from "./data";
 import axios from "axios";
 import { product } from "./data";
+import { FormGroup, Input, Label } from "reactstrap";
 
 
 const initialForm = {
@@ -169,51 +170,70 @@ function Form() {
                 </label> )}
           </div>
         </div>
-        <div className="name-input">
-          <label  htmlFor='name'>Ad Soyad</label>
-          <input  type="text" 
+          <FormGroup className="name-input">
+            <Label for="name">
+             Ad Soyad
+            </Label >
+            <Input
+                  type="text" 
                   id="name"
                   name="name"
                   onChange={handleChange}
                   value={form.name}
-                  placeholder="Ad Soyad Giriniz"></input>
-        </div>
-        <div className="product-input">
-          <label  htmlFor='productName'>Ürün</label>
-          <input  type="text"
+                  placeholder="Ad Soyad Giriniz"
+            />
+            </FormGroup>
+        
+        
+          <FormGroup className="product-input">
+            <Label for="productName">
+             Ürün Adı
+            </Label >
+            <Input
+                  type="text"
                   id="productName"
                   name="productName"
                   onChange={handleChange}
                   value={form.productName}
-                  placeholder="Ürün Adı Giriniz"></input>
-        </div>
-        <div className="text-input">
-          <label htmlFor="orderNote">Sipariş Notu</label>
-          <textarea id="orderNote" 
-                    name="orderNote"
-                    value={form.orderNote}
-                    onChange={handleChange}
-                    placeholder="Siparişine eklemek istediğin bir not var mı?" rows="2"></textarea>
-        </div>
+                  placeholder="Ürün Adı Giriniz"
+            />
+            </FormGroup>
+        
+          <FormGroup className="text-input">
+            <Label for="orderNote">
+              Sipariş Notu
+            </Label>
+          <Input
+          id="orderNote" 
+          name="orderNote"
+          value={form.orderNote}
+          onChange={handleChange}
+          placeholder="Siparişine eklemek istediğin bir not var mı?"
+          type="textarea"
+          />
+          </FormGroup>
         <div className="order-footer">
             <div className="counter">
               <button type="button" onClick={()=>handleQuantityChange(-1)} disabled={form.quantity <= 1}>-</button>
               <span>{form.quantity}</span>
               <button type="button" onClick={()=>handleQuantityChange(1)}>+</button>
             </div>
-            <div className="summary-card">
+            <div className="summary">
+                <div className="summary-card">
                 <h4>Sipariş Toplamı</h4>
-                <div className="summarry-row">
+                <div className="summary-row">
                 <span>Seçimler</span>
                 <span>{addPrice.toFixed(2)}₺</span>
-            </div>
-            <div className="summarry-total">
-                <span>Toplam</span>
-                <span>{totalPrice.toFixed(2)}₺</span>
                 </div>
-                <button type="submit" disabled={!isValid}>Sipariş Ver</button>
+                 <div className="summary-total">
+                    <span>Toplam</span>
+                    <span>{totalPrice.toFixed(2)}₺</span>
+                </div>
+                </div>
+            <button type="submit" disabled={!isValid}>Sipariş Ver</button>
             </div>
-        </div>
+           
+      </div>
     </form>)
 }
 export default Form;

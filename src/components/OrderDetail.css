@@ -109,13 +109,7 @@ form {
 .counter span{
     padding-top: 0.5rem;
 }
-.summary-card{
-    display: flex;
-    flex-direction: column;
-    width: 60%;;
-    gap:0.5rem;
-   
-}
+
 
 .order-footer button {
     background-color: #FDC913;
@@ -124,14 +118,25 @@ form {
     background-color: #5F5F5F;
     color:white;
 }
-.summarry-row, .summarry-total {
+
+.summary{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    gap:0.5rem; 
 }
-.summary-card h4{
-    padding-left: 3.2rem;
+.summary-card{
+    border: 1px solid #D9D9D9;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
 }
-.summarry-total span {
+.summary-row, .summary-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-total span {
     color:#CE2829;
     font-weight: 600;
 }
