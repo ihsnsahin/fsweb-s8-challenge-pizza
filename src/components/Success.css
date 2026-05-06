@@ -1,0 +1,32 @@
+.success{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    height: 100vh;
+    width: 100%;
+    background-color: #CE2829;  
+    color: #fff;
+   
+}
+.success h2{
+    font-family: "Londrina Solid";
+    font-size: 3.2rem;
+    padding: 3rem;
+}
+.success p{
+    font-family: "Satisfy";
+    font-size: 2rem;
+    color: #FDC913;
+    margin-bottom: -1.5rem;
+
+}
+.success h1 {
+    font-family: "Roboto Condensed";
+    font-size: 5.5rem;
+    font-weight: 300;
+    border-bottom: 1px solid white;
+    padding-bottom: 2rem;
+} 

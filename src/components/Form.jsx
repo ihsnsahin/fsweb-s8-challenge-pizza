@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import {add} from "./data";
 import axios from "axios";
 import { product } from "./data";
-import { FormGroup, Input, Label } from "reactstrap";
+import { FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const initialForm = {
@@ -26,7 +27,8 @@ function Form() {
     add: false,
     orderNote: false,
   })
-  
+
+  const history= useHistory();
   const addPrice = form.add.length*product.ek;
   const totalPrice = form.quantity*product.fiyat + addPrice;
 
@@ -52,7 +54,7 @@ function Form() {
      setForm({ ...form, [name]: newValue });
 
     if (name === 'name') {
-      if (value.trim().length>=3) {
+      if (newValue.trim().length>=3) {
         setErrors({ ...errors, [name]: false });
       } else {
         setErrors({ ...errors, [name]: true });
@@ -88,6 +90,7 @@ function Form() {
     };
 
   };
+  console.log(errors)
   const handleSubmit = (event) => {
     event.preventDefault();
     const finalForm = {...form, totalPrice:totalPrice};
@@ -96,7 +99,10 @@ function Form() {
     axios.post("https://reqres.in/api/pizza ", form, {
       headers: {"x-api-key": "pub_bb6e669884e959413fd1a4f9d6750f26f9a75699353266f035534be0c29b5f3b"}
     })
-    .then((res)=>console.log("Sipariş Özeti", res.data))
+    .then((res)=>{
+      console.log("Sipariş Özeti", res.data);
+      history.push("/success", res.data)
+  })
     .catch((err)=>console.log(err))
   };
    useEffect(() => {
@@ -117,37 +123,52 @@ function Form() {
     <form onSubmit={handleSubmit}>
         <div className="pizza-size">
             <div className="size">
-                <h4>Boyut Seç</h4>
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="size" 
-                      value="Küçük"
-                      checked={form.size==="Küçük"}
-                      onChange={handleChange}
-                    /> Küçük
-                  </label>
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="size" 
-                      value="Orta"
-                     checked={form.size==="Orta"}
-                      onChange={handleChange}
-                    /> Orta
-                  </label>
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="size" 
-                      value="Büyük"
-                     checked={form.size==="Büyük"}
-                      onChange={handleChange}
-                    /> Büyük
-                  </label>
+              <h4>Boyut Seç <span> *</span></h4>
+            <FormGroup check>
+              <Input
+                  type="radio" 
+                  name="size"
+                  id="Küçük"
+                  value="Küçük"
+                  checked={form.size==="Küçük"}
+                  onChange={handleChange}
+                  />
+                  {' '}
+              <Label htmlFor="Küçük" check>
+              Küçük
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Input
+                  type="radio" 
+                  id="Orta"
+                  name="size" 
+                  value="Orta"
+                  checked={form.size==="Orta"}
+                  onChange={handleChange}
+                  />
+                  {' '}
+              <Label htmlFor="Orta" check>
+              Orta
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Input
+                  type="radio" 
+                  name="size" 
+                  id="Büyük"
+                  value="Büyük"
+                  checked={form.size==="Büyük"}
+                  onChange={handleChange}
+                  />
+                  {' '}
+              <Label htmlFor="Büyük"check>
+              Büyük
+              </Label>
+            </FormGroup>
             </div>
             <div className="thickness">
-                  <h4>Hamur Seç</h4>
+                  <h4>Hamur Seç<span> *</span></h4>
                   <select name="thickness" value={form.thickness} onChange={handleChange}>
                       <option value="" disabled>Hamur Kalınlığı Seçiniz</option>
                       <option value="Kalın" >Kalın</option>
@@ -158,17 +179,21 @@ function Form() {
         <div className="pizza-additional">
           <h4>Ek Malzemeler</h4>
           <p>En Fazla 10 malzeme seçebilirsiniz. {product.ek}₺</p>
-          <div className="checkbox">
-              {add.map((item)=> <label key={item}>
-              <input 
+          <FormGroup className="checkbox">
+              {add.map((item)=> (<Label key={item}>
+              <Input
                 type="checkbox" 
                 name= "add"
                 value={item}
                 checked={form.add.includes(item)}
                 onChange={handleChange}
+                invalid={errors.add}
                 />{item}
-                </label> )}
-          </div>
+                </Label>
+              ))}
+            {errors.add&& <p id="error">En az 4 - En fazla 10 adet seçim yapılmalı.
+    </p>}    
+          </FormGroup>
         </div>
           <FormGroup className="name-input">
             <Label for="name">
@@ -180,8 +205,11 @@ function Form() {
                   name="name"
                   onChange={handleChange}
                   value={form.name}
+                  invalid={errors.name}
                   placeholder="Ad Soyad Giriniz"
             />
+            {errors.name&&<FormFeedback> Ad soyad en az 3 hane olmalı
+    </FormFeedback>}
             </FormGroup>
         
         
@@ -195,8 +223,11 @@ function Form() {
                   name="productName"
                   onChange={handleChange}
                   value={form.productName}
+                  invalid={errors.productName}
                   placeholder="Ürün Adı Giriniz"
             />
+            {errors.name && <FormFeedback> Ürün adı en az 3 hane olmalı
+    </FormFeedback>}
             </FormGroup>
         
           <FormGroup className="text-input">
@@ -208,6 +239,7 @@ function Form() {
           name="orderNote"
           value={form.orderNote}
           onChange={handleChange}
+          invalid={errors.orderNote}
           placeholder="Siparişine eklemek istediğin bir not var mı?"
           type="textarea"
           />

@@ -3,33 +3,49 @@
     margin: 0;
     padding: 0;
 }
-header {
+.order-header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #CE2829;
+    width: 100%;
     color: white;
     font-family: "Barlow";
 }
-.content {
+.order-header-content {
     max-width:532px;
     width:100%;
     margin: 0 auto;
     padding-bottom: 0.8rem;
 }
 
-header h2 {
+.order-header-content h2 {
     font-family: "Londrina Solid";
     font-size: 3.2rem;
     text-align: center;
     padding: 3rem;
 }
-header a {
+
+.order-header-link a {
     text-decoration: none;
     font-size: 1rem;
     color: #e0e0e0;
 }
-header span {
+.order-header-link a:hover {
+    color: #FDC913;
+}
+.order-header-link span {
     font-size: 1rem;
+    color: white;
+}
+.order-header-content{
+    max-width:532px;
+    width:100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.order-header-link{
+    background-color: #CE2829;
 }

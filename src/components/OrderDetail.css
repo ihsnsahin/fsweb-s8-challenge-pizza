@@ -7,8 +7,9 @@
    flex-direction: column;
    gap: 1.5rem;
 }
-h4{
-    font-size:1.2rem;
+form h4{
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 form {
     display: flex;
@@ -18,6 +19,7 @@ form {
 
 .pizza-detail h3 {
     font-size: 1.375rem;
+    font-weight: 700;
 }
 #price {
     font-size: 1.8rem;
@@ -28,6 +30,9 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.pizza-size span {
+    color: #CE2829;
 }
 .rating {
     display: flex;
@@ -55,6 +60,10 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+#error {
+    color: #dc3545;
+    font-size: 0.875rem;
 }
 .checkbox {
     display: flex;
