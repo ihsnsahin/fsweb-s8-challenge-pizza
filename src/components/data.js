@@ -26,7 +26,7 @@ export const products = [{
 {
         id: 2,
         isim: "Terminal Pizza",
-        fiyat: 95.50,
+        fiyat: 75.50,
         text: "Komut satırı kadar hızlı, lezzeti kadar etkileyici. Karmaşık kodları unutturan, sade ama güçlü bir lezzet deneyimi",
         ek: 5,
         rating1: 4.9,
@@ -34,10 +34,10 @@ export const products = [{
 },
 {
         id: 3,
-        isim: "Hackatlon Burger Menu",
-        fiyat: 105.50,
-        text: "Komut satırı kadar hızlı, lezzeti kadar etkileyici. Karmaşık kodları unutturan, sade ama güçlü bir lezzet deneyimi",
-        ek: 0,
+        isim: "Terminal Sucuklu Pizza",
+        fiyat: 95.50,
+        text: "Geleneksel lezzetlerin modern bir interface ile buluştuğu nokta. Özel Terminal sosu (v2.0), her dilimde default olarak gelen bol sucuk ve çıtır kenar optimizasyonu. Açlık krizlerine karşı en hızlı patch çözümümüz.",
+        ek: 5,
         rating1: 4.9,
         rating2: 200
 },

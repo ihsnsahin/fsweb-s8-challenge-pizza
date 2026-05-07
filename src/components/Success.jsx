@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Success.css"
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import SummaryCard from "./SummaryCard";
 function Success () {
     const location = useLocation();
     const {state} = location;
@@ -17,6 +18,7 @@ function Success () {
                     <p>Ekler: <strong>{state.add.length > 0 ? state.add.join(", "):"Seçim yapılmadı."}</strong></p>
                 </div>
             </div>
+            <SummaryCard addPrice={state.selectPrice} totalPrice={state.totalPrice} customCard="-success"/>
     </div>
 )}
 export default Success;

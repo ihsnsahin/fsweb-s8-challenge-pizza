@@ -3,6 +3,8 @@ import {add} from "./data";
 import axios from "axios";
 import { FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import SummaryCard from "./SummaryCard";
+import './Form.css'
 
 
 const initialForm = {
@@ -90,7 +92,7 @@ function Form(props) {
     const finalForm = {
       ...form, 
       totalPrice:totalPrice,
-      productName:product?.isim,
+      productName:product.isim,
       selectPrice: addPrice
     };
     axios.post("https://reqres.in/api/pizza ", finalForm, {
@@ -232,17 +234,7 @@ function Form(props) {
               <button type="button" onClick={()=>handleQuantityChange(1)}>+</button>
             </div>
             <div className="summary">
-                <div className="summary-card">
-                <h4>Sipariş Toplamı</h4>
-                <div className="summary-row">
-                <span>Seçimler</span>
-                <span>{addPrice.toFixed(2)}₺</span>
-                </div>
-                 <div className="summary-total">
-                    <span>Toplam</span>
-                    <span>{totalPrice.toFixed(2)}₺</span>
-                </div>
-                </div>
+               <SummaryCard addPrice={addPrice} totalPrice={totalPrice}/>
             <button type="submit" disabled={!isValid}>Sipariş Ver</button>
             </div>
            

@@ -1,0 +1,106 @@
+form h4{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pizza-size span {
+    color: #CE2829;
+}
+
+.pizza-size {
+    display: flex;
+    gap: 6rem;
+}
+.size label{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    cursor:pointer
+}
+.size, .thickness {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pizza-additional {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#error {
+    color: #dc3545;
+    font-size: 0.875rem;
+}
+.checkbox {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;;
+}
+.checkbox label {
+    width: 25%;
+    display: flex;
+    gap: 0.5rem;
+}
+.product-input, .name-input, .text-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.product-input label, .name-input label, .text-input label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.text-input textarea {
+    padding: 0.8rem;
+}
+.text-input textarea::placeholder {
+    font-family: "Barlow";
+    font-size: 0.9rem;
+}   
+.product-input input {
+    padding: 0.8rem;
+}
+.name-input input {
+    padding: 0.8rem;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    gap:0.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+     border-top: 1px solid #5F5F5F80;
+}
+.counter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 28%;
+}
+.counter span{
+    padding-top: 0.5rem;
+}
+.order-footer button {
+    background-color: #FDC913;
+}
+.order-footer button:disabled{
+    background-color: #5F5F5F;
+    color:white;
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    gap:0.5rem; 
+}
