@@ -14,13 +14,12 @@ function App() {
         <Route path="/" exact>
           <MainPage/>
         </Route>
-        <Route path="/order">
+        <Route path="/order/:id">
           <Order/>
         </Route>
         <Route path="/success">
           <Success/>
         </Route>
-        
       </Switch>
     </>
   )

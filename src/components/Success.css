@@ -9,6 +9,7 @@
     width: 100%;
     background-color: #CE2829;  
     color: #fff;
+    font-family: "Barlow";
    
 }
 .success h2{
@@ -16,7 +17,7 @@
     font-size: 3.2rem;
     padding: 3rem;
 }
-.success p{
+#lezzet{
     font-family: "Satisfy";
     font-size: 2rem;
     color: #FDC913;
@@ -29,4 +30,27 @@
     font-weight: 300;
     border-bottom: 1px solid white;
     padding-bottom: 2rem;
-} 
+}
+.pizza-data{
+    display: flex;
+    flex-direction: column;
+    gap:0;
+}
+.pizza-data h3{
+    font-size: 1.6rem;
+}
+.pizza-data p {
+    font-size: 1rem;
+    margin:0;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.selections {
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    text-align: left;
+    padding: 2rem 3rem;
+    max-width: 350px;
+    width: 100%;
+}

@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import {add} from "./data";
 import axios from "axios";
-import { product } from "./data";
-import { FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const initialForm = {
   name:"",
-  productName:"",
+  productName: "",
   size: "",
   thickness: "",
   add: [],
   orderNote: "",
   quantity: 1,
-  totalPrice: product.fiyat,
+  selectPrice:null,
+  totalPrice: null,
 }
-function Form() {
+function Form(props) {
+  const {product} = props;
   const [form, setForm] = useState(initialForm);
   const [isValid, setIsValid] = useState(false);
   const [errors, setErrors] = useState({
@@ -27,7 +28,6 @@ function Form() {
     add: false,
     orderNote: false,
   })
-
   const history= useHistory();
   const addPrice = form.add.length*product.ek;
   const totalPrice = form.quantity*product.fiyat + addPrice;
@@ -37,6 +37,7 @@ function Form() {
       setForm({...form, quantity: form.quantity + amount})
     }
   }
+ 
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
@@ -54,13 +55,6 @@ function Form() {
      setForm({ ...form, [name]: newValue });
 
     if (name === 'name') {
-      if (newValue.trim().length>=3) {
-        setErrors({ ...errors, [name]: false });
-      } else {
-        setErrors({ ...errors, [name]: true });
-      }
-    };
-     if (name === 'productName') {
       if (newValue.trim().length>=3) {
         setErrors({ ...errors, [name]: false });
       } else {
@@ -90,13 +84,16 @@ function Form() {
     };
 
   };
-  console.log(errors)
   const handleSubmit = (event) => {
     event.preventDefault();
-    const finalForm = {...form, totalPrice:totalPrice};
-    setForm(finalForm);
     if(!isValid) return;
-    axios.post("https://reqres.in/api/pizza ", form, {
+    const finalForm = {
+      ...form, 
+      totalPrice:totalPrice,
+      productName:product?.isim,
+      selectPrice: addPrice
+    };
+    axios.post("https://reqres.in/api/pizza ", finalForm, {
       headers: {"x-api-key": "pub_bb6e669884e959413fd1a4f9d6750f26f9a75699353266f035534be0c29b5f3b"}
     })
     .then((res)=>{
@@ -108,7 +105,6 @@ function Form() {
    useEffect(() => {
     if (
       form.name.trim().length>=3 && 
-      form.productName.trim().length>=3 &&
       form.size && 
       form.thickness &&
       form.add.length>=4 && 
@@ -129,8 +125,8 @@ function Form() {
                   type="radio" 
                   name="size"
                   id="Küçük"
-                  value="Küçük"
-                  checked={form.size==="Küçük"}
+                  value="S"
+                  checked={form.size==="S"}
                   onChange={handleChange}
                   />
                   {' '}
@@ -143,8 +139,8 @@ function Form() {
                   type="radio" 
                   id="Orta"
                   name="size" 
-                  value="Orta"
-                  checked={form.size==="Orta"}
+                  value="M"
+                  checked={form.size==="M"}
                   onChange={handleChange}
                   />
                   {' '}
@@ -157,8 +153,8 @@ function Form() {
                   type="radio" 
                   name="size" 
                   id="Büyük"
-                  value="Büyük"
-                  checked={form.size==="Büyük"}
+                  value="L"
+                  checked={form.size==="L"}
                   onChange={handleChange}
                   />
                   {' '}
@@ -167,16 +163,19 @@ function Form() {
               </Label>
             </FormGroup>
             </div>
+           
             <div className="thickness">
                   <h4>Hamur Seç<span> *</span></h4>
                   <select name="thickness" value={form.thickness} onChange={handleChange}>
                       <option value="" disabled>Hamur Kalınlığı Seçiniz</option>
                       <option value="Kalın" >Kalın</option>
+                      <option value="Orta(Normal)" >Orta (Normal)</option>
                       <option value="İnce" >İnce</option>
+                      <option value="Süper İnce" >Süper İnce</option>
                   </select>
                       </div>
-                      </div>
-        <div className="pizza-additional">
+               </div>
+          <div className="pizza-additional">
           <h4>Ek Malzemeler</h4>
           <p>En Fazla 10 malzeme seçebilirsiniz. {product.ek}₺</p>
           <FormGroup className="checkbox">
@@ -209,24 +208,6 @@ function Form() {
                   placeholder="Ad Soyad Giriniz"
             />
             {errors.name&&<FormFeedback> Ad soyad en az 3 hane olmalı
-    </FormFeedback>}
-            </FormGroup>
-        
-        
-          <FormGroup className="product-input">
-            <Label for="productName">
-             Ürün Adı
-            </Label >
-            <Input
-                  type="text"
-                  id="productName"
-                  name="productName"
-                  onChange={handleChange}
-                  value={form.productName}
-                  invalid={errors.productName}
-                  placeholder="Ürün Adı Giriniz"
-            />
-            {errors.name && <FormFeedback> Ürün adı en az 3 hane olmalı
     </FormFeedback>}
             </FormGroup>
         

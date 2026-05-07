@@ -7,7 +7,7 @@ function MainPage() {
         <div className="hero">
             <h2>Teknolojik Yemekler</h2>
             <h1>KOD ACIKTIRIR<br />PIZZA, DOYURUR</h1>
-            <Link to="/order">ACIKTIM</Link>
+            <Link to="/order/3">ACIKTIM</Link>
         </div>
     )
 }
