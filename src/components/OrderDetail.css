@@ -1,11 +1,16 @@
 .order-detail-wrapper {
-   max-width: 532px;
+    background-color: #FAF7F2;
+    margin-bottom: 1.5rem;
+}
+.pizza-detail {
+     max-width: 532px;
    margin: 0 auto;
    width: 100%;
    font-family: "Barlow";
    display: flex;
    flex-direction: column;
    gap: 1.5rem;
+
 }
 .pizza-detail h3 {
     font-size: 1.375rem;
@@ -20,6 +25,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.img-wrapper{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img-wrapper img {
+    width: 530px;
+    height: 400px;
+    object-fit: cover;
+    object-position: bottom;
+    margin-top: -175px;
 }
 .rating {
     display: flex;

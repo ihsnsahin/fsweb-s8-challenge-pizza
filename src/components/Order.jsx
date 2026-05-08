@@ -12,13 +12,6 @@ function Order(props) {
                 <h2> Teknolojik Yemekler</h2>
             </div>
     </div>
-    <div className='order-header-link'>
-        <div className='order-header-content'>
-        <Link to="/">Ana Sayfa</Link>
-        <span> - </span>
-        <span>Sipariş Oluştur</span>
-        </div>
-    </div>
     <OrderDetail handleFinalOrder={handleFinalOrder}/>
     </>
     )

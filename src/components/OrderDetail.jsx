@@ -1,9 +1,11 @@
 
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import Form from './Form';
 import './OrderDetail.css';
 import { useEffect, useState } from 'react';
 import { products } from './data';
+import Footer from './Footer';
+
 
 function OrderDetail(props){
   const {handleFinalOrder} = props;
@@ -16,11 +18,22 @@ function OrderDetail(props){
   if(!product) {
     return (<p>Yükleniyor</p>)
   }
-  const {isim, fiyat, text, ek, rating1, rating2} = product;
+  const {isim, fiyat, text, ek, rating1, rating2, src} = product;
 
-return ( 
-  <div className="order-detail-wrapper">
+return (
+  <>
+   <div className="order-detail-wrapper">
     <div className="pizza-detail">
+    <div className="img-wrapper">
+      <img src={src}/>
+    </div>
+    <div className='order-header-link'>
+        <div className='order-header-content'>
+        <Link to="/">Ana Sayfa</Link>
+        <span> - </span>
+        <span>Sipariş Oluştur</span>
+        </div>
+    </div>
     <h3>{isim}</h3>
     <div >
         <span id="price">{fiyat.toFixed(2)}₺</span>
@@ -31,8 +44,11 @@ return (
         </div>
           <p>{text}</p>
     </div>
-     <Form product={product} handleFinalOrder={handleFinalOrder}/>
   </div>
+  <Form product={product} handleFinalOrder={handleFinalOrder}/>
+  <Footer/>
+  </>
+ 
 )
 }
 export default OrderDetail;

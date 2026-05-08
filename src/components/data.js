@@ -21,7 +21,8 @@ export const products = [{
         text: "Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.",
         ek: 5,
         rating1: 4.9,
-        rating2: 200
+        rating2: 200,
+        src: "/src/assets/pictures/order.png",
 },
 {
         id: 2,
@@ -30,7 +31,8 @@ export const products = [{
         text: "Komut satırı kadar hızlı, lezzeti kadar etkileyici. Karmaşık kodları unutturan, sade ama güçlü bir lezzet deneyimi",
         ek: 5,
         rating1: 4.9,
-        rating2: 200
+        rating2: 200,
+        src: "/src/assets/pictures/order.png",
 },
 {
         id: 3,
@@ -39,6 +41,7 @@ export const products = [{
         text: "Geleneksel lezzetlerin modern bir interface ile buluştuğu nokta. Özel Terminal sosu (v2.0), her dilimde default olarak gelen bol sucuk ve çıtır kenar optimizasyonu. Açlık krizlerine karşı en hızlı patch çözümümüz.",
         ek: 5,
         rating1: 4.9,
-        rating2: 200
+        rating2: 200,
+        src: "/src/assets/pictures/order.png",
 },
 ]

@@ -13,11 +13,12 @@
     color: white;
     font-family: "Barlow";
 }
-.order-header-content {
+.order-header-content{
     max-width:532px;
     width:100%;
     margin: 0 auto;
-    padding-bottom: 0.8rem;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .order-header-content h2 {
@@ -30,22 +31,18 @@
 .order-header-link a {
     text-decoration: none;
     font-size: 1rem;
-    color: #e0e0e0;
+    font-weight: 500;
+    color: #5F5F5F;
 }
 .order-header-link a:hover {
     color: #FDC913;
 }
 .order-header-link span {
     font-size: 1rem;
-    color: white;
+    color: #CE2829;
+    font-weight: 500;
 }
-.order-header-content{
-    max-width:532px;
-    width:100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-}
+
 .order-header-link{
-    background-color: #CE2829;
+    background-color: #FAF7F2;
 }

@@ -121,8 +121,9 @@ function Form(props) {
     <form onSubmit={handleSubmit}>
         <div className="pizza-size">
             <div className="size">
-              <h4>Boyut Seç <span> *</span></h4>
-            <FormGroup check>
+            <h4>Boyut Seç <span> *</span></h4>
+                <div className="formGroup-size">
+                  <FormGroup check>
               <Input
                   type="radio" 
                   name="size"
@@ -130,11 +131,11 @@ function Form(props) {
                   value="S"
                   checked={form.size==="S"}
                   onChange={handleChange}
-                  data-cy="radio-S"
+                  
                   />
                   {' '}
-              <Label htmlFor="Küçük" check>
-              Küçük
+              <Label htmlFor="Küçük" data-cy="radio-S" className={`size-btn${form.size==="S"?"-active": ""}`}check>
+              S
               </Label>
             </FormGroup>
             <FormGroup check>
@@ -145,11 +146,11 @@ function Form(props) {
                   value="M"
                   checked={form.size==="M"}
                   onChange={handleChange}
-                  data-cy="radio-M"
+                  
                   />
                   {' '}
-              <Label htmlFor="Orta" check>
-              Orta
+              <Label htmlFor="Orta" data-cy="radio-M" className={`size-btn${form.size==="M"?"-active": ""}`} check>
+              M
               </Label>
             </FormGroup>
             <FormGroup check>
@@ -160,18 +161,21 @@ function Form(props) {
                   value="L"
                   checked={form.size==="L"}
                   onChange={handleChange}
-                  data-cy="radio-L"
+                  
                   />
                   {' '}
-              <Label htmlFor="Büyük"check>
-              Büyük
+              <Label htmlFor="Büyük" data-cy="radio-L" className={`size-btn${form.size==="L"?"-active": ""}`} check>
+              L
               </Label>
             </FormGroup>
+
+                </div>
+            
             </div>
            
             <div className="thickness">
                   <h4>Hamur Seç<span> *</span></h4>
-                  <select name="thickness" data-cy="dropdown" value={form.thickness} onChange={handleChange}>
+                  <select name="thickness" data-cy="dropdown" className="dropdown"value={form.thickness} onChange={handleChange}>
                       <option value=""  disabled>Hamur Kalınlığı Seçiniz</option>
                       <option value="Kalın">Kalın</option>
                       <option value="Orta(Normal)" >Orta (Normal)</option>

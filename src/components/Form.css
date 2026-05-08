@@ -2,32 +2,71 @@ form h4{
     font-size: 1.2rem;
     font-weight: 700;
 }
+
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+   max-width: 532px;
+   margin: 0 auto;
+   width: 100%;
+   font-family: "Barlow";
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
 }
 
 .pizza-size span {
     color: #CE2829;
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .pizza-size {
     display: flex;
     gap: 6rem;
+   
 }
-.size label{
+.formGroup-size {
     display: flex;
     justify-content: flex-start;
+}
+
+.size-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:3rem;
+    height: 3rem;
+    border-radius: 50%;
     gap: 0.5rem;
-    cursor:pointer
+    cursor:pointer;
+    background-color: #FAF7F2;
+}
+.size-btn-active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:3rem;
+    height: 3rem;
+    border-radius: 50%;
+    gap: 0.5rem;
+    cursor:pointer;
+    background-color: #FFEECC;
+}
+
+
+.size input {
+    display: none;
 }
 .size, .thickness {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-
+.dropdown {
+    padding: 1rem 1.5rem;
+    background-color: #FAF7F2;
+    border-radius: 0.2rem;
+    border: #FAF7F2;
+}
 .pizza-additional {
     display: flex;
     flex-direction: column;
@@ -48,6 +87,19 @@ form {
     width: 25%;
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+    font-weight: 700;
+}
+.checkbox input{
+    background-color:#FAF7F2;
+    border: #FAF7F2;
+    padding: 1rem;
+    font-size: 1rem;
+}
+.checkbox input:checked{
+    background-color: #FDC913;
+    border: #FDC913;
+    padding: 1rem;
 }
 .product-input, .name-input, .text-input {
     display: flex;
@@ -60,6 +112,7 @@ form {
 }
 .text-input textarea {
     padding: 0.8rem;
+    background-color: #FAF7F2;
 }
 .text-input textarea::placeholder {
     font-family: "Barlow";
@@ -67,9 +120,11 @@ form {
 }   
 .product-input input {
     padding: 0.8rem;
+    background-color: #FAF7F2;
 }
 .name-input input {
     padding: 0.8rem;
+    background-color: #FAF7F2;
 }
 
 .order-footer {
