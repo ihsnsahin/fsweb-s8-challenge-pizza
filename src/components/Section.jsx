@@ -1,46 +1,17 @@
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import './Section.css';
+import {nav, products2} from "./data"
+import NavItems from './NavItems.jsx';
+import ProductItem from './ProductItem.jsx';
 
 function Section () {
     return (
         <>
         <nav className="nav-container">
         <div className="nav-content dflex-sb maxwidth">
-          <div className="nav-items">
-            <a className="nav-link" href="">
-              <img src="src/assets/icons/1.svg" alt="YENİ!Kore"/>
-              <span>YENİ!Kore</span>
-            </a>
-          </div>
-          <div className="nav-items">
-            <a className="nav-link" href="">
-              <img src="src/assets/icons/2.svg" alt="Pizza" />
-              <span>Pizza</span>
-            </a>
-          </div>
-          <div className="nav-items">
-            <a className="nav-link" href="">
-              <img src="src/assets/icons/3.svg" alt="Burger" />
-              <span>Burger</span>
-            </a>
-          </div>
-          <div className="nav-items">
-            <a className="nav-link" href="">
-              <img src="src/assets/icons/4.svg" alt="Kızartmalar" />
-              <span>Kızartmalar</span>
-            </a>
-          </div>
-          <div className="nav-items">
-            <a className="nav-link" href="">
-              <img src="src/assets/icons/5.svg" alt="Burger" />
-              <span>Burger</span>
-            </a>
-          </div>
-          <div className="nav-items">
-            <a className="nav-link" href=""><img src="src/assets/icons/6.svg" alt="Gazlı İçecek" />
-            <span>Gazlı İçecek</span>
-            </a>
-          </div>
+          {nav.map((item)=> (
+            <NavItems key={item.id} text={item.textTr} img={item.img}/>
+          ))}
         </div>
       </nav>
       <section className="promotion-container maxwidth">
@@ -79,71 +50,15 @@ function Section () {
       </section>
       <nav className="nav-container-2 maxwidth">
         <div className="nav-content-2 dflex-sb">
-          <div className="nav-items-2">
-            <a className="nav-link-2" href="">
-              <img src="src/assets/icons/1.svg" alt="YENİ!Kore" />
-              <span>Ramen</span>
-            </a>
-          </div>
-          <div className="nav-items-2">
-            <a className="nav-link-2" href="">
-              <img src="src/assets/icons/2.svg" alt="Pizza" />
-              <span>Pizza</span>
-            </a>
-          </div>
-          <div className="nav-items-2">
-            <a className="nav-link-2" href="">
-              <img src="src/assets/icons/3.svg" alt="Burger" />
-              <span>Burger</span>
-            </a>
-          </div>
-          <div className="nav-items-2">
-            <a className="nav-link-2" href="">
-              <img src="src/assets/icons/4.svg" alt="Kızartmalar" />
-              <span>French Fries</span>
-            </a>
-          </div>
-          <div className="nav-items-2">
-            <a className="nav-link-2" href="">
-              <img src="src/assets/icons/5.svg" alt="Burger" />
-              <span>Fast-food</span>
-            </a>
-          </div>
-          <div className="nav-items-2">
-            <a className="nav-link-2" href=""><img src="src/assets/icons/6.svg" alt="Gazlı İçecek" />
-            <span>Soft Drinks</span>
-            </a>
-          </div>
+           {nav.map((item)=> (
+            <NavItems key={item.id} text={item.textEn} img={item.img} navClass="-2"/>
+          ))}
         </div>
       </nav>
       <section className="product-price dflex-sb maxwidth">
-        <div className="product-items">
-          <img src="src/assets/pictures/food-1.png" alt=""/>
-          <h3>Terminal Pizza</h3>
-          <div className="price">
-            <p>4.9</p>
-            <p>(200)</p>
-            <p className="bold">60₺</p>
-          </div>
-        </div>
-         <div className="product-items">
-          <img src="src/assets/pictures/food-2.png" alt=""/>
-          <h3>Position Absolute Acı Pizza</h3>
-          <div className="price">
-            <p>4.9</p>
-            <p>(200)</p>
-            <p className="bold">60₺</p>
-          </div>
-        </div>
-         <div className="product-items">
-          <img src="src/assets/pictures/food-3.png" alt=""/>
-          <h3>useEffect Tavuklu Burger</h3>
-          <div className="price">
-            <p>4.9</p>
-            <p>(200)</p>
-            <p className="bold">60₺</p>
-          </div>
-        </div>
+       {products2.map((item)=>(
+        <ProductItem  key={item.id} product={item}/>
+       ))}
       </section>
       </>)
 }

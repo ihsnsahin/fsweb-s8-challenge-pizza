@@ -195,6 +195,9 @@
     border-radius:0.75rem;
     padding: 2rem;
 }
+.product-items h3 {
+    font-size: 1.375rem;
+}
 .price {
     display: flex;
     justify-content: space-between;  

@@ -122,9 +122,9 @@ function Form(props) {
         <div className="pizza-size">
             <div className="size">
             <h4>Boyut Seç <span> *</span></h4>
-                <div className="formGroup-size">
-                  <FormGroup check>
-              <Input
+            <div className="formGroup-size">
+              <FormGroup check>
+                  <Input
                   type="radio" 
                   name="size"
                   id="Küçük"
@@ -134,9 +134,9 @@ function Form(props) {
                   
                   />
                   {' '}
-              <Label htmlFor="Küçük" data-cy="radio-S" className={`size-btn${form.size==="S"?"-active": ""}`}check>
-              S
-              </Label>
+                <Label htmlFor="Küçük" data-cy="radio-S" className={`size-btn${form.size==="S"?"-active": ""}`}check>
+                S
+                </Label>
             </FormGroup>
             <FormGroup check>
               <Input
@@ -168,9 +168,7 @@ function Form(props) {
               L
               </Label>
             </FormGroup>
-
-                </div>
-            
+            </div>  
             </div>
            
             <div className="thickness">
@@ -182,9 +180,9 @@ function Form(props) {
                       <option value="İnce">İnce</option>
                       <option value="Süper İnce">Süper İnce</option>
                   </select>
-                      </div>
-               </div>
-          <div className="pizza-additional">
+            </div>
+        </div>
+        <div className="pizza-additional">
           <h4>Ek Malzemeler</h4>
           <p>En Fazla 10 malzeme seçebilirsiniz. {product.ek}₺</p>
           <FormGroup className="checkbox">
@@ -218,7 +216,7 @@ function Form(props) {
                   data-cy="input-name"
                   placeholder="Ad Soyad Giriniz"
             />
-            {errors.name&&<FormFeedback>Ad soyad en az 3 hane olmalı
+            {errors.name&&<FormFeedback id="error">Ad soyad en az 3 hane olmalı
     </FormFeedback>}
             </FormGroup>
         
