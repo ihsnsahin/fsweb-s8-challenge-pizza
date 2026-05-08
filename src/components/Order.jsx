@@ -2,7 +2,8 @@ import './Order.css';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import OrderDetail from './OrderDetail';
 
-function Order() {
+function Order(props) {
+    const {handleFinalOrder} = props;
    
     return (
     <>
@@ -18,7 +19,7 @@ function Order() {
         <span>Sipariş Oluştur</span>
         </div>
     </div>
-    <OrderDetail/>
+    <OrderDetail handleFinalOrder={handleFinalOrder}/>
     </>
     )
 }

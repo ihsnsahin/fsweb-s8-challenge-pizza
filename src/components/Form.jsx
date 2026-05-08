@@ -19,7 +19,7 @@ const initialForm = {
   totalPrice: null,
 }
 function Form(props) {
-  const {product} = props;
+  const {product, handleFinalOrder} = props;
   const [form, setForm] = useState(initialForm);
   const [isValid, setIsValid] = useState(false);
   const [errors, setErrors] = useState({
@@ -100,7 +100,7 @@ function Form(props) {
     })
     .then((res)=>{
       console.log("Sipariş Özeti", res.data);
-      history.push("/success", res.data)
+      handleFinalOrder(res.data);
   })
     .catch((err)=>console.log(err))
   };

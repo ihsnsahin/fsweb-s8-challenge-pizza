@@ -5,7 +5,8 @@ import './OrderDetail.css';
 import { useEffect, useState } from 'react';
 import { products } from './data';
 
-function OrderDetail(){
+function OrderDetail(props){
+  const {handleFinalOrder} = props;
   const {id} = useParams();
   const [product, setProduct] = useState(null)
   useEffect(() => {
@@ -30,7 +31,7 @@ return (
         </div>
           <p>{text}</p>
     </div>
-     <Form product={product}/>
+     <Form product={product} handleFinalOrder={handleFinalOrder}/>
   </div>
 )
 }
