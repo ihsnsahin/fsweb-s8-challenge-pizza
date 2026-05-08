@@ -4,48 +4,37 @@
     margin: 0;
     padding: 0;
 }
-.hero {
+body {
+    background: #FAF7F2;
+    font-family: 'Barlow', sans-serif;
+    color: black;
+}
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    gap: 2.5rem;
-    height: 100vh;
-    width: 100%;
-    background-color: #CE2829;
-    background-image: url("/src/assets/resim/pizza.png"), url("/src/assets/resim/general.png") , url("/src/assets/resim/top-right.png"), url("/src/assets/resim/bottom-left.png");
-    background-position: bottom, center bottom 25px, top right, bottom left;
-    background-size: min(950px, 60%) auto, 85% auto, 25% auto, 27% auto;
-    background-repeat: no-repeat;   
-    color: #fff;
-    padding-top: 6.5rem;
 }
-.hero h2{
-    font-family: "Londrina Solid";
-    font-size: 3.2rem;
-}
-
-.hero .hero-content p{
-    font-family: "Satisfy";
-    color: #FDC913;
-    font-size: 2rem;
-    margin-bottom: -1.1rem;
-}
-
-.hero h1 {
-    font-family: "Roboto Condensed";
-    font-size: 5.5rem;
-    line-height: 1;
-    font-weight: 300;
-} 
-.hero a {
-    background-color: #FDC913;
-    color: black;
-    border-radius: 3.125rem;
-    padding: 0.8rem 2.5rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+a {
     text-decoration: none;
-    text-align: center;
+    color: white;
+}
+ul {
+    list-style-type: none;
+    text-decoration: none;
+}
+.dflex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dflexc{
+    display: flex;
+    flex-direction: column;
+}
+.maxwidth {
+    max-width: 1072px;
 }

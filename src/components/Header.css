@@ -1,0 +1,49 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    height: 100vh;
+    width: 100%;
+    background-color: #CE2829;
+    background-image: url("/src/assets/resim/pizza.png"), url("/src/assets/resim/general.png") , url("/src/assets/resim/top-right.png"), url("/src/assets/resim/bottom-left.png");
+    background-position: bottom, center bottom 25px, top right, bottom left;
+    background-size: min(950px, 60%) auto, 85% auto, 25% auto, 27% auto;
+    background-repeat: no-repeat;   
+    color: #fff;
+    padding-top: 3.5rem;
+}
+.hero h2{
+    font-family: "Londrina Solid";
+    font-size: 3.2rem;
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero h1 {
+    font-family: "Roboto Condensed";
+    font-size: 5.5rem;
+    line-height: 1;
+    font-weight: 300;
+} 
+.hero .hero-content p{
+    font-family: "Satisfy";
+    color: #FDC913;
+    font-size: 2rem;
+    margin-bottom: -1.1rem;
+}
+.hero a {
+    background-color: #FDC913;
+    color: black;
+    border-radius: 3.125rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}

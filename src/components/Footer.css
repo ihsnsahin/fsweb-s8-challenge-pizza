@@ -1,0 +1,90 @@
+.main-footer {
+  background: #1A1A1A;
+  color:white;
+  padding-top: 3.625rem;
+}
+.main-footer a {
+    color: white;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.footer-contact {
+    row-gap:2.5rem;
+}
+.footer-contact h1{
+  font-family: "Londrina Solid";
+  font-size: 3.125rem;
+  line-height: 1;
+}
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem
+}
+.contact-info a{
+  display: block;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  margin-top: -0.625rem;
+  font-weight: 400;
+}
+
+.footer-menu {
+  align-items: flex-start;
+}
+
+.footer-menu h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-bottom:2.25rem;
+  margin-top: 70px;
+
+}
+.footer-menu ul {
+  padding-left: 0;
+  padding-top: 0;
+  margin-top: 0
+}
+.footer-menu ul li{
+  padding-bottom: 6px;
+}
+.footer-menu ul li a {
+  display:block;
+  font-size: 1.2rem
+  font-weight: 400;
+  line-height: 2rem;
+}
+.footer-instagram {
+  gap: 1rem;
+}
+.footer-instagram h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-bottom:1.5rem;
+  margin-top: 4.3rem;
+}
+.insta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.insta-grid img {
+  width: 6.5rem;
+  height: 6rem;
+  border-radius: 0.3rem;
+}
+.copyright {
+  margin: 0 auto;   
+}
+.bottom {
+  border-top:  1px solid #FFFFFF26;
+  padding: 2rem;
+  background-color: #1A1A1A;
+  color: white;
+}

@@ -1,0 +1,211 @@
+.nav-container {
+    width: 100%;
+    background-color: white;
+}
+.nav-content {
+    margin: 26px auto;
+    gap: 3.25rem;
+    width: 100%;
+}
+.nav-items a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 1rem;
+}
+.nav-items a span{
+    color: black;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    white-space: nowrap;
+}
+.nav-items a img{
+    aspect-ratio: 1/1;
+    object-position: cover;
+}
+
+/*section promotion------------------------*/
+.promotion-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.6875rem;
+    margin: 4.25rem auto 0 auto;
+    background: #FAF7F2;
+    color: white;
+}
+.promotion-container img {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+.promotion-content-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5625rem;
+}
+.promotion-content-left, .item-right-top, .item-right-bottom {
+    position: relative;
+}
+.promotion-container .text-left, .text-right-bottom, .text-right-top {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+.promotion-container a{
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    background-color: white;
+    color: #CE2829;
+    border-radius: 3.125rem;
+    font-size: 0.875rem;
+    margin: 1.625rem 0 0 0;
+  }
+  .promotion-container a:hover {
+    background-color: #FDC913;
+    color: #CE2829;
+  }
+.text-left h3 {
+    font-family: "Quattrocento";
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.text-right-bottom h3 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+}
+.text-right-top h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+}
+
+.text-right-bottom h3 span {
+    color: #D80027;
+}
+
+.text p{
+    font-size: 1.66rem;
+    margin: 6px, 0 0 0;
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 1296px;
+    margin: 0 auto;
+    margin-top: 63px;
+    gap: 8px;
+}
+.top-title-content {
+    text-align: center;
+    max-width: 408px;
+    margin: 0 auto;
+}
+.top-title-content p{
+    font-family: "Satisfy";
+    color: #CE2829;
+    font-size: 2rem;
+    line-height: 1;
+
+}
+
+.bottom-title-content {
+    text-align: center;
+     max-width: 712px;
+    margin: 0 auto;
+   
+    white-space: nowrap;
+    margin-bottom: 10px;;
+}
+.bottom-title-content h1{
+    margin: 0;
+    padding: 0;
+    font-size: 2.625rem;
+    font-family: "Barlow";
+}
+/* nav-2---------------------------------------------*/
+.nav-container-2 {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+.nav-content-2 {
+    margin: 16px auto;
+    padding-top: 0;
+    padding-bottom: 0px;
+    gap: 1.125rem;
+    width: 100%;
+}
+.nav-items-2 a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background-color: white;
+    color: black;
+    padding: 0.4rem 1.2rem;
+    border-radius: 3.125rem;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.nav-items-2 a:hover{
+    background-color: black;
+    color: white;
+}
+
+.nav-items-2 a span{
+    font-size: 1.125rem;
+    line-height: 2rem;
+    white-space: nowrap;
+}
+.nav-items-2 a img{
+    aspect-ratio: 1/1;
+    object-position: cover;
+}
+/* section product-items*/
+.product-price {
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+}
+.product-items {
+    display: flex;
+    flex-direction: column;
+    max-width: 334px;
+    background-color: white;
+    border-radius:0.75rem;
+    padding: 2rem;
+}
+.price {
+    display: flex;
+    justify-content: space-between;  
+}
+.product-price img {
+    object-position: center;
+    object-fit: cover;
+}
+p.bold {
+    font-weight: 700;
+}
+.product-items p{
+    font-size: 0.9rem;
+}

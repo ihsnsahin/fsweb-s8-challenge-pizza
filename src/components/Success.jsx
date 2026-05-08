@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./Success.css"
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import SummaryCard from "./SummaryCard";
+import Footer from './Footer';
 function Success () {
     const location = useLocation();
     const {state} = location;
     return (
+    <>
     <div className="success">
             <h2>Teknolojik Yemekler</h2>
             <p id="lezzet">lezzetin yolda</p>
@@ -20,5 +22,7 @@ function Success () {
             </div>
             <SummaryCard addPrice={state.selectPrice} totalPrice={state.totalPrice} customCard="-success"/>
     </div>
+    <Footer/>
+    </>
 )}
 export default Success;
