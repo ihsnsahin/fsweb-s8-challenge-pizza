@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Success.css"
 import SummaryCard from "./SummaryCard";
 import Footer from './Footer';
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 function Success (props) {
     const {orderInfo} = props;
     return (

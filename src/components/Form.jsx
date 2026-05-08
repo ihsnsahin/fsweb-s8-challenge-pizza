@@ -102,7 +102,10 @@ function Form(props) {
       console.log("Sipariş Özeti", res.data);
       handleFinalOrder(res.data);
   })
-    .catch((err)=>console.log(err))
+    .catch((err)=>{
+      console.error(err)
+      history.push("/error")
+    })
   };
    useEffect(() => {
     if (

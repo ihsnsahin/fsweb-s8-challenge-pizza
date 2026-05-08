@@ -6,6 +6,7 @@ import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom
 import Order from './components/Order';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Success from './components/Success';
+import Error from './components/Error';
 
 function App() {
   const [orderInfo, setOrderInfo] = useState(null);
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/success">
           <Success orderInfo={orderInfo}/>
+        </Route>
+        <Route path="/error">
+          <Error/>
         </Route>
       </Switch>
     </>
