@@ -130,6 +130,7 @@ function Form(props) {
                   value="S"
                   checked={form.size==="S"}
                   onChange={handleChange}
+                  data-cy="radio-S"
                   />
                   {' '}
               <Label htmlFor="Küçük" check>
@@ -144,6 +145,7 @@ function Form(props) {
                   value="M"
                   checked={form.size==="M"}
                   onChange={handleChange}
+                  data-cy="radio-M"
                   />
                   {' '}
               <Label htmlFor="Orta" check>
@@ -158,6 +160,7 @@ function Form(props) {
                   value="L"
                   checked={form.size==="L"}
                   onChange={handleChange}
+                  data-cy="radio-L"
                   />
                   {' '}
               <Label htmlFor="Büyük"check>
@@ -168,12 +171,12 @@ function Form(props) {
            
             <div className="thickness">
                   <h4>Hamur Seç<span> *</span></h4>
-                  <select name="thickness" value={form.thickness} onChange={handleChange}>
-                      <option value="" disabled>Hamur Kalınlığı Seçiniz</option>
-                      <option value="Kalın" >Kalın</option>
+                  <select name="thickness" data-cy="dropdown" value={form.thickness} onChange={handleChange}>
+                      <option value=""  disabled>Hamur Kalınlığı Seçiniz</option>
+                      <option value="Kalın">Kalın</option>
                       <option value="Orta(Normal)" >Orta (Normal)</option>
-                      <option value="İnce" >İnce</option>
-                      <option value="Süper İnce" >Süper İnce</option>
+                      <option value="İnce">İnce</option>
+                      <option value="Süper İnce">Süper İnce</option>
                   </select>
                       </div>
                </div>
@@ -189,6 +192,7 @@ function Form(props) {
                 checked={form.add.includes(item)}
                 onChange={handleChange}
                 invalid={errors.add}
+                data-cy={`checkbox-${item}`}
                 />{item}
                 </Label>
               ))}
@@ -207,9 +211,10 @@ function Form(props) {
                   onChange={handleChange}
                   value={form.name}
                   invalid={errors.name}
+                  data-cy="input-name"
                   placeholder="Ad Soyad Giriniz"
             />
-            {errors.name&&<FormFeedback> Ad soyad en az 3 hane olmalı
+            {errors.name&&<FormFeedback>Ad soyad en az 3 hane olmalı
     </FormFeedback>}
             </FormGroup>
         
@@ -235,7 +240,7 @@ function Form(props) {
             </div>
             <div className="summary">
                <SummaryCard addPrice={addPrice} totalPrice={totalPrice}/>
-            <button type="submit" disabled={!isValid}>Sipariş Ver</button>
+            <button type="submit" data-cy="input-button" disabled={!isValid}>Sipariş Ver</button>
             </div>
            
       </div>

@@ -12,7 +12,7 @@ function App() {
   const history = useHistory();
   const handleFinalOrder  = (data) =>{
     setOrderInfo(data);
-    history.push("/success") 
+    history.push("/success", data) 
   }
   return (
     <>

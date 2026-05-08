@@ -7,7 +7,7 @@ function Header () {
             <div className="hero-content">
                 <p>fırsatı kaçırma</p>
             <h1>KOD ACIKTIRIR<br />PIZZA, DOYURUR</h1>
-            <Link to="/order/3">ACIKTIM</Link>
+            <Link data-cy="order-link-1" to="/order/1">ACIKTIM</Link>
             </div>
         </div>)
 }
