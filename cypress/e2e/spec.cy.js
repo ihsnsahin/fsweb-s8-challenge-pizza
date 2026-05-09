@@ -155,5 +155,30 @@ describe('Disabled Button Tests', () => {
     cy.get('[data-cy="input-button"]').should('be.disabled')
     cy.contains("Ad soyad en az 3 hane olmalı").should("be.visible");
   });
+  it('Error Modal Test', () => {
+    cy.intercept("Post", "https://reqres.in/api/pizza", {
+      statusCode: 500,
+      body: { error: "Sunucu Hatası"}
+    }).as("postError")
+    //act
+    cy.get('[data-cy="radio-L"]').click()
+    cy.get('[data-cy="dropdown"]').select("Orta (Normal)")
+    cy.get('[data-cy="checkbox-Sosis"]').click()
+    cy.get('[data-cy="checkbox-Soğan"]').click()
+    cy.get('[data-cy="checkbox-Sucuk"]').click()
+    cy.get('[data-cy="checkbox-Biber"]').click()
+    cy.get('[data-cy="checkbox-Sarımsak"]').click()
+    cy.get('[data-cy="checkbox-Mısır"]').click()
+    cy.get('[data-cy="checkbox-Ananas"]').click()
+    cy.get('[data-cy="checkbox-Tavuk Izgara"]').click()
+    cy.get('[data-cy="checkbox-Kabak"]').click()
+    cy.get('[data-cy="checkbox-K. Jambonu"]').click()
+    cy.get('[data-cy="input-name"]').type("İhsan Şahin")
+    cy.get('[data-cy="input-button"]').click()
+    cy.wait("@postError")
+    //assets
+    cy.get('[data-cy="modal"]').should("be.visible")
+    cy.contains('İnternet bağlantısı nedeniyle bir hata oluştu. Lütfen bağlantınızı kontrol ediniz.').should("be.visible")
+  });
   });
 })

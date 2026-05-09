@@ -4,7 +4,7 @@ function ErrorModal(props) {
   const {modal, modalToggle} = props;
     return (
     <>
-       <Modal isOpen={modal} toggle={modalToggle}>
+       <Modal data-cy="modal" isOpen={modal} toggle={modalToggle}>
         <ModalHeader toggle={modalToggle}>Hata</ModalHeader>
         <ModalBody>
          İnternet bağlantısı nedeniyle bir hata oluştu. Lütfen bağlantınızı kontrol ediniz.

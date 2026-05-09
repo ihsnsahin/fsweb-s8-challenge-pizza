@@ -97,7 +97,7 @@ function Form(props) {
       productName:product.isim,
       selectPrice: addPrice
     };
-    axios.post("https://reqres.in/api/pizza ", finalForm, {
+    axios.post("https://reqres.in/api/pizza", finalForm, {
       headers: {"x-api-key": "pub_bb6e669884e959413fd1a4f9d6750f26f9a75699353266f035534be0c29b5f3b"}
     })
     .then((res)=>{
