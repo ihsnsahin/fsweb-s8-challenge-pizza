@@ -88,3 +88,12 @@
   background-color: #1A1A1A;
   color: white;
 }
+
+@media (max-width: 532px) {
+.footer-container {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 0 3.75rem 3.2rem 3.75rem;
+    }
+}
+  

@@ -11,6 +11,7 @@ form {
    display: flex;
    flex-direction: column;
    gap: 1.5rem;
+   padding-bottom: 3rem;
 }
 #error {
     color: #dc3545;
@@ -135,8 +136,7 @@ form {
     justify-content: space-between;
     gap:0.5rem;
     padding-top: 1.5rem;
-    padding-bottom: 5rem;
-     border-top: 1px solid #5F5F5F80;
+    border-top: 1px solid #5F5F5F80;
 }
 .counter {
     display: flex;
@@ -155,10 +155,44 @@ form {
     background-color: #5F5F5F;
     color:white;
 }
+
 .summary{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 60%;
     gap:0.5rem; 
+}
+
+@media (max-width: 532px) {
+    form{
+        padding-left: 3.75rem;
+        padding-right: 3.75rem;
+    }
+    .pizza-size {
+    gap: 1rem;
+    }
+    .dropdown {
+    padding: 0.8rem 0.4rem;
+    }
+    .size-btn, .size-btn-active{
+    width:2.5rem;
+    height: 2.5rem;
+    gap: 0.3rem;
+    }
+    .checkbox label {
+    width: 33%;
+    gap: 0.5rem;
+    }
+    .order-footer{
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    }
+    .counter {
+    align-items: flex-end;
+    }
+    .counter span{
+    padding-bottom: 0.5rem;
+    }
 }

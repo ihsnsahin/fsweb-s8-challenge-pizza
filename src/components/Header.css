@@ -47,3 +47,19 @@
     text-decoration: none;
     text-align: center;
 }
+@media (max-width: 500px) {
+    .hero {
+        background-image: url("/src/assets/resim/pizza.png");
+        background-size: 120%;
+        gap: 2rem;
+        padding-top: 4rem;
+    }
+    .hero-content {
+        gap: 0.2rem;
+    }
+    .hero h2{
+    }
+    .hero .hero-content p{
+        display: none;
+    }
+}

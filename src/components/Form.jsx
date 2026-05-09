@@ -246,10 +246,11 @@ function Form(props) {
               <button type="button" onClick={()=>handleQuantityChange(1)}>+</button>
             </div>
             <div className="summary">
-               <SummaryCard addPrice={addPrice} totalPrice={totalPrice}/>
+            <SummaryCard addPrice={addPrice} totalPrice={totalPrice}/>
             <button type="submit" data-cy="input-button" disabled={!isValid}>Sipariş Ver</button>
             </div>
       </div>
+      
       <ErrorModal modal={modal} modalToggle={modalToggle} />
     </form>)
 }
