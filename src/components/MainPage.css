@@ -4,14 +4,12 @@
     margin: 0;
     padding: 0;
 }
-body {
-    background: #FAF7F2;
-    font-family: 'Barlow', sans-serif;
-    color: black;
-}
-.container {
+.main-container {
     display: flex;
     flex-direction: column;
+    background-color: #FAF7F2;
+    font-family: 'Barlow', sans-serif;
+    color: black;
 }
 a {
     text-decoration: none;
@@ -37,5 +35,10 @@ ul {
 }
 .maxwidth {
     max-width: 1072px;
+}
+@media (max-width:532px) {
+     .maxwidth{
+        max-width: 422px;
+    }
 }
 

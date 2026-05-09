@@ -238,7 +238,7 @@ p.bold {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 532px) {
     .promotion-container{
         flex-wrap: wrap;
         align-items: center
@@ -246,7 +246,7 @@ p.bold {
     .promotion-content-left, .item-right-top, .item-right-bottom {
         width: 100%;
     }
-    .nav-content-2{
+    .nav-content-2 ,.nav-content{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -280,9 +280,7 @@ p.bold {
         left: 0.5rem;
     }
     .promotion-container a{
-    width: 5rem;
-    height: 3rem;
+    padding: 0.75rem 1rem;
     font-size: 0.8rem;
-    margin: 0.8rem 0 0 0;
   }
 }

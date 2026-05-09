@@ -47,7 +47,11 @@
     text-decoration: none;
     text-align: center;
 }
-@media (max-width: 500px) {
+.hero a:hover{
+    background-color: orange;
+    color: black;
+}
+@media (max-width: 532px) {
     .hero {
         background-image: url("/src/assets/resim/pizza.png");
         background-size: 120%;
