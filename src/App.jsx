@@ -6,7 +6,6 @@ import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom
 import Order from './components/Order';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Success from './components/Success';
-import Error from './components/Error';
 
 function App() {
   const [orderInfo, setOrderInfo] = useState(null);
@@ -15,6 +14,8 @@ function App() {
     setOrderInfo(data);
     history.push("/success", data) 
   }
+  const [modal, setModal] = useState(false);
+  const modalToggle = () => setModal(!modal);
   return (
     <>
       <Switch>
@@ -22,13 +23,10 @@ function App() {
           <MainPage/>
         </Route>
         <Route path="/order/:id">
-          <Order handleFinalOrder={handleFinalOrder}/>
+          <Order handleFinalOrder={handleFinalOrder} modal={modal} modalToggle={modalToggle}/>
         </Route>
         <Route path="/success">
           <Success orderInfo={orderInfo}/>
-        </Route>
-        <Route path="/error">
-          <Error/>
         </Route>
       </Switch>
     </>

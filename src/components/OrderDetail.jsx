@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 
 function OrderDetail(props){
-  const {handleFinalOrder} = props;
+  const {handleFinalOrder, modal, modalToggle} = props;
   const {id} = useParams();
   const [product, setProduct] = useState(null)
   useEffect(() => {
@@ -45,7 +45,7 @@ return (
           <p>{text}</p>
     </div>
   </div>
-  <Form product={product} handleFinalOrder={handleFinalOrder}/>
+  <Form product={product} handleFinalOrder={handleFinalOrder} modal={modal} modalToggle={modalToggle}/>
   <Footer/>
   </>
  

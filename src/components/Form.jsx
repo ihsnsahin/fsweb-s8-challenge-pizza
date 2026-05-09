@@ -5,6 +5,7 @@ import { FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import SummaryCard from "./SummaryCard";
 import './Form.css'
+import ErrorModal from "./ErrorModal";
 
 
 const initialForm = {
@@ -19,7 +20,7 @@ const initialForm = {
   totalPrice: null,
 }
 function Form(props) {
-  const {product, handleFinalOrder} = props;
+  const {product, handleFinalOrder, modal, modalToggle} = props;
   const [form, setForm] = useState(initialForm);
   const [isValid, setIsValid] = useState(false);
   const [errors, setErrors] = useState({
@@ -31,6 +32,7 @@ function Form(props) {
     orderNote: false,
   })
   const history= useHistory();
+
   const addPrice = form.add.length*product.ek;
   const totalPrice = form.quantity*product.fiyat + addPrice;
 
@@ -104,7 +106,7 @@ function Form(props) {
   })
     .catch((err)=>{
       console.error(err)
-      history.push("/error")
+      modalToggle();
     })
   };
    useEffect(() => {
@@ -247,8 +249,8 @@ function Form(props) {
                <SummaryCard addPrice={addPrice} totalPrice={totalPrice}/>
             <button type="submit" data-cy="input-button" disabled={!isValid}>Sipariş Ver</button>
             </div>
-           
       </div>
+      <ErrorModal modal={modal} modalToggle={modalToggle} />
     </form>)
 }
 export default Form;

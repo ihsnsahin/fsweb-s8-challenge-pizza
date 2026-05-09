@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import OrderDetail from './OrderDetail';
 
 function Order(props) {
-    const {handleFinalOrder} = props;
+    const {handleFinalOrder, modal, modalToggle} = props;
    
     return (
     <>
@@ -12,7 +12,7 @@ function Order(props) {
                 <h2> Teknolojik Yemekler</h2>
             </div>
     </div>
-    <OrderDetail handleFinalOrder={handleFinalOrder}/>
+    <OrderDetail handleFinalOrder={handleFinalOrder} modal={modal} modalToggle={modalToggle}/>
     </>
     )
 }
