@@ -35,7 +35,7 @@ function Footer() {
         <div className="insta-grid">
           <img src="/assets/footer/other/footer-1.png" alt="" />
           <img src="/assets/footer/other/footer-2.png" alt="" />
-          <img src="/src/assets/footer/other/footer-3.png" alt="" />
+          <img src="/assets/footer/other/footer-3.png" alt="" />
         </div>
         <div className="insta-grid">
           <img src="/assets/footer/other/footer-4.png" alt="" />
