@@ -1,18 +1,18 @@
-export const add=["Pepperoni", 
-        "Sosis", 
-        "K. Jambonu", 
+export const add = ["Pepperoni",
+        "Sosis",
+        "K. Jambonu",
         "Tavuk Izgara",
-        "Soğan", 
-        "Domates", 
-        "Mısır", 
-        "Sucuk", 
-        "Jalepono", 
-        "Sarımsak", 
-        "Biber", 
-        "Cheddar", 
-        "Ananas", 
+        "Soğan",
+        "Domates",
+        "Mısır",
+        "Sucuk",
+        "Jalepono",
+        "Sarımsak",
+        "Biber",
+        "Cheddar",
+        "Ananas",
         "Kabak"
-        ];
+];
 
 export const products = [{
         id: 1,
@@ -22,7 +22,7 @@ export const products = [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/order.png",
+        src: "/assets/pictures/order.png",
 },
 {
         id: 2,
@@ -32,7 +32,7 @@ export const products = [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/order.png",
+        src: "/assets/pictures/order.png",
 },
 {
         id: 3,
@@ -42,50 +42,50 @@ export const products = [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/order.png",
+        src: "/assets/pictures/order.png",
 },
 ];
 
 export const nav = [
-{
-        id: 1,
-        img: "/src/assets/icons/1.svg",
-        textTr: "YENİ!Kore",
-        textEn: "Ramen"
-},
-{
-        id:2,
-        img: "/src/assets/icons/2.svg",
-        textTr: "Pizza",
-        textEn: "Pizza"
-},
-{
-        id: 3,
-        img: "/src/assets/icons/3.svg",
-        textTr: "Pizza",
-        textEn: "Burger"
-},
-{
-        id: 4,
-        img: "/src/assets/icons/4.svg",
-        textTr: "Kızartmalar",
-        textEn: "French Fries"
-},
-{
-        id: 5,
-        img: "/src/assets/icons/5.svg",
-        textTr: "Burger",
-        textEn: "Fast-Food"
-},
-{
-        id: 6,
-        img: "/src/assets/icons/6.svg",
-        textTr: "Gazlı İçecekler",
-        textEn: "Soft Drinks"
-}
+        {
+                id: 1,
+                img: "/assets/icons/1.svg",
+                textTr: "YENİ!Kore",
+                textEn: "Ramen"
+        },
+        {
+                id: 2,
+                img: "/assets/icons/2.svg",
+                textTr: "Pizza",
+                textEn: "Pizza"
+        },
+        {
+                id: 3,
+                img: "/assets/icons/3.svg",
+                textTr: "Pizza",
+                textEn: "Burger"
+        },
+        {
+                id: 4,
+                img: "/assets/icons/4.svg",
+                textTr: "Kızartmalar",
+                textEn: "French Fries"
+        },
+        {
+                id: 5,
+                img: "/assets/icons/5.svg",
+                textTr: "Burger",
+                textEn: "Fast-Food"
+        },
+        {
+                id: 6,
+                img: "/assets/icons/6.svg",
+                textTr: "Gazlı İçecekler",
+                textEn: "Soft Drinks"
+        }
 ];
 
-export const products2= [{
+export const products2 = [{
         id: 1,
         isim: "Terminal Pizza",
         fiyat: 75.50,
@@ -93,7 +93,7 @@ export const products2= [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/food-1.png",
+        src: "/assets/pictures/food-1.png",
 },
 {
         id: 2,
@@ -103,7 +103,7 @@ export const products2= [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/food-2.png",
+        src: "/assets/pictures/food-2.png",
 },
 {
         id: 3,
@@ -113,6 +113,6 @@ export const products2= [{
         ek: 5,
         rating1: 4.9,
         rating2: 200,
-        src: "/src/assets/pictures/food-3.png",
+        src: "/assets/pictures/food-3.png",
 },
 ];

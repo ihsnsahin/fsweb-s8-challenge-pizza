@@ -16,7 +16,7 @@ function Section() {
       </nav>
       <section className="promotion-container maxwidth">
         <div className="promotion-content-left">
-          <img src="src/assets/cta/kart-1.png" alt="" />
+          <img src="/assets/cta/kart-1.png" alt="" />
           <div className="text-left">
             <h3>Özel<br />Lezzetus</h3>
             <p>Position:Absolute Acı Burger</p>
@@ -25,14 +25,14 @@ function Section() {
         </div>
         <div className="promotion-content-right">
           <div className="item-right-top">
-            <img src="src/assets/cta/kart-2.png" alt="" />
+            <img src="/assets/cta/kart-2.png" alt="" />
             <div className="text-right-top">
               <h3>Hackathlon<br />Burger Menü</h3>
               <Link data-cy="order-link-3" to="/order/2">Sipariş Ver</Link>
             </div>
           </div>
           <div className="item-right-bottom">
-            <img src="src/assets/cta/kart-3.png" alt="" />
+            <img src="/assets/cta/kart-3.png" alt="" />
             <div className="text-right-bottom">
               <h3><span>Çooooook</span> hızlı<br />npm gibi kurye </h3>
               <Link data-cy="order-link-4" to="/order/3">Sipariş Ver</Link>
